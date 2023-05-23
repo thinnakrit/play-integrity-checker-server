@@ -35,6 +35,10 @@ async function getTokenResponse(token) {
 module.exports = async (req, res) => {
 
     const { token = 'none' } = req.query
+     if (token == 'hello') {
+        res.status(200).send({ 'response': 'Hello world' })
+        return
+    }
 
     if (token == 'none') {
         res.status(400).send({ 'error': 'No token provided' })
