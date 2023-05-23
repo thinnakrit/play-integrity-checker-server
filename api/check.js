@@ -33,7 +33,7 @@ async function getTokenResponse(token) {
 }
 
 module.exports = async (req, res) => {
-
+    console.log('req.query', req.query);
     const { token = 'none' } = req.query
      if (token == 'hello') {
         res.status(200).send({ 'response': 'Hello world' })
